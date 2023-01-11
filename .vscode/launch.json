@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug spec (v0.1.0)",
+      "type": "rdbg",
+      "request": "launch",
+      "useBundler": false,
+      "script": "${relativeFile}",
+      "rdbgPath": "bin/rdbg", // necessary on v0.1.0, but doesn't work
+      "command": "rspec",
+      "cwd":"${workspaceFolder}",
+      "useTerminal": true, // required to see proper error traceback
+      "env": {
+        "PATH": "${env:PATH}"
+      }
+    },
+    {
+      "name": "Debug spec (v0.0.11)",
+      "type": "rdbg",
+      "request": "launch",
+      "useBundler": false,
+      "script": "${relativeFile}",
+      "rdbgPath": "PATH=$HOME/.rbenv/shims:$PATH bin/rdbg",
+      "command": "rspec",
+      "cwd":"${workspaceFolder}",
+      "env": {
+        "PATH": "${env:PATH}"
+      }
+    }
+  ]
+}
